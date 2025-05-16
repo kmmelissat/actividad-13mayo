@@ -8,8 +8,4 @@ export class RegisterAttendanceDto {
   @IsEmail()
   @IsNotEmpty()
   email: string;
-
-  @IsString()
-  @IsNotEmpty()
-  eventId: string;
 }
