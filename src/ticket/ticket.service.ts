@@ -25,4 +25,24 @@ export class TicketService {
         return newTicket;
     }
 
+    delete(){
+
+        const TotalQuantity = this.tickets.length;
+        const CurrentTime = new Date().getTime();
+        const LimitTime = 2*60*1000;
+
+        this.tickets = this.tickets.filter(t => {
+
+            if (!t.tiempoDeCompra) return true;
+
+            const tiempoCompra = new Date(t.tiempoDeCompra).getTime();
+            const tiempoTranscurrido = CurrentTime - tiempoCompra;
+            return tiempoTranscurrido <= LimitTime;
+        })
+
+        const ticketsEliminados = TotalQuantity - this.tickets.length;
+        console.log(`Se eliminaron ${ticketsEliminados} tickets expirados`);
+    
+        return ticketsEliminados;
+    }
 }
