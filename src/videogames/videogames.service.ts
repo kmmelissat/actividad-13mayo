@@ -14,7 +14,7 @@ export class VideogamesService {
         id: 2,
         name: 'Grand Theft Auto V',
         genre: 'Open World',
-        date: new Date(' 2013-09-17')
+        date: new Date('2013-09-17')
     },
     {
         id: 3,
