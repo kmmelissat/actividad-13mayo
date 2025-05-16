@@ -7,10 +7,12 @@ import { AppService } from './app.service';
 import { BillsController } from './bills/bills.controller';
 import { BillsService } from './bills/bills.service';
 import { VideogamesModule } from './videogames/videogames.module';
+import { BooksModule } from './books/books.module';
 import { EventModule } from './event/event.module';
 
+
 @Module({
-  imports: [VideogamesModule, EventModule],
+  imports: [VideogamesModule, EventModule, BooksModule],
   controllers: [AppController, BillsController],
   providers: [
     AppService,
@@ -24,5 +26,6 @@ import { EventModule } from './event/event.module';
       }),
     },
   ],
+
 })
 export class AppModule {}

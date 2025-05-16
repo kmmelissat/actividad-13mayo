@@ -3,6 +3,7 @@ import { VideogamesService } from './videogames.service';
 import { VideogamesController } from './videogames.controller';
 
 @Module({
+  imports: [],
   controllers: [VideogamesController],
   providers: [VideogamesService],
 })
