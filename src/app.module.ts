@@ -4,17 +4,15 @@ import { ValidationPipe } from '@nestjs/common';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BillsController } from './bills/bills.controller';
-import { BillsService } from './bills/bills.service';
 import { VideogamesModule } from './videogames/videogames.module';
 import { EventModule } from './event/event.module';
+import { BillsModule } from './bills/bills.module';
 
 @Module({
-  imports: [VideogamesModule, EventModule],
-  controllers: [AppController, BillsController],
+  imports: [VideogamesModule, EventModule, BillsModule],
+  controllers: [AppController],
   providers: [
     AppService,
-    BillsService,
     {
       provide: APP_PIPE,
       useValue: new ValidationPipe({
