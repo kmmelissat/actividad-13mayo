@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { OrdersModule } from './orders/orders.module';
 import { ValidationPipe } from '@nestjs/common';
 
 const PORT = 8000;

@@ -3,6 +3,8 @@ import { APP_PIPE } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { OrdersController } from './orders/orders.controller';
+import { OrdersService } from './orders/orders.service';
 import { VideogamesModule } from './videogames/videogames.module';
 import { EventModule } from './event/event.module';
 import { BillsModule } from './bills/bills.module';
@@ -10,9 +12,10 @@ import { BooksModule } from './books/books.module';
 
 @Module({
   imports: [VideogamesModule, EventModule, BillsModule, BooksModule],
-  controllers: [AppController],
+  controllers: [AppController,OrdersController],
   providers: [
     AppService,
+    OrdersService,
     {
       provide: APP_PIPE,
       useValue: new ValidationPipe({
