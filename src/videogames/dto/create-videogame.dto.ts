@@ -1,4 +1,4 @@
-import { IsString, MinLength } from 'class-validator';
+import { IsString, MinLength, IsDateString } from 'class-validator';
 
 export class CreateVideogameDto {
   @IsString()
@@ -8,4 +8,7 @@ export class CreateVideogameDto {
   @IsString()
   @MinLength(3, { message: 'Genre must be longer than 2 characters' })
   genre: string;
+
+  @IsDateString()
+  date: string;
 }

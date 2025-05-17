@@ -8,19 +8,19 @@ export class VideogamesService {
       id: 1,
       name: 'Minecraft',
       genre: 'Sandbox',
-      date: new Date('2011-11-18'),
+      date: '2011-11-18',
     },
     {
       id: 2,
       name: 'Grand Theft Auto V',
       genre: 'Open World',
-      date: new Date('2013-09-17'),
+      date: '2013-09-17',
     },
     {
       id: 3,
       name: 'Fortnite',
       genre: 'Battle Royale',
-      date: new Date('2017-07-25'),
+      date: '2017-07-25',
     },
   ];
 
@@ -33,7 +33,7 @@ export class VideogamesService {
       id: this.videogames.length + 1,
       name: createVideogameDto.name,
       genre: createVideogameDto.genre,
-      date: new Date(),
+      date: createVideogameDto.date,
     };
     this.videogames.push(newVideogame);
     return newVideogame;

@@ -97,10 +97,11 @@ export class BooksService {
 
   findAll(q?: string): Book[] {
     if (!q) return this.books;
-    return this.books.filter(book => 
-      book.title.toLowerCase().includes(q.toLowerCase()) ||
-      book.author.toLowerCase().includes(q.toLowerCase()) ||
-      book.genre.toLowerCase().includes(q.toLowerCase())
+    return this.books.filter(
+      (book) =>
+        book.title.toLowerCase().includes(q.toLowerCase()) ||
+        book.author.toLowerCase().includes(q.toLowerCase()) ||
+        book.genre.toLowerCase().includes(q.toLowerCase()),
     );
   }
 }

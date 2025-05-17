@@ -5,6 +5,11 @@ import { OrdersService } from './orders.service';
 export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}
 
+  @Get()
+  getAllOrders() {
+    return this.ordersService.getAllOrders();
+  }
+
   @Get(':id')
   getOrder(@Param('id') id: string) {
     return this.ordersService.getOrder(Number(id));
