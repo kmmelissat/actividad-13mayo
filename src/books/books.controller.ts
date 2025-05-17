@@ -6,7 +6,7 @@ export class BooksController {
   constructor(private readonly booksService: BooksService) {}
 
   @Get()
-  findAll(@Query('q') q: string): Book[] {
-    return this.booksService.findAll(q);
+  findAll(@Query('q') query?: string): Book[] {
+    return this.booksService.findAll(query);
   }
 }
