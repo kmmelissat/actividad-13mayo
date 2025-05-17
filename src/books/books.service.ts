@@ -95,7 +95,12 @@ export class BooksService {
     },
   ];
 
-  findAll(): Book[] {
-    return this.books;
+  findAll(q?: string): Book[] {
+    if (!q) return this.books;
+    return this.books.filter(book => 
+      book.title.toLowerCase().includes(q.toLowerCase()) ||
+      book.author.toLowerCase().includes(q.toLowerCase()) ||
+      book.genre.toLowerCase().includes(q.toLowerCase())
+    );
   }
 }
