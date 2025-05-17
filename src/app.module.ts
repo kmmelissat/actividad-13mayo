@@ -5,16 +5,11 @@ import { VideogamesModule } from './videogames/videogames.module';
 import { EventModule } from './event/event.module';
 import { BillsModule } from './bills/bills.module';
 import { BooksModule } from './books/books.module';
+import { TicketsModule } from './ticket/ticket.module';
 import { OrdersModule } from './orders/orders.module';
 
 @Module({
-  imports: [
-    VideogamesModule,
-    EventModule,
-    BillsModule,
-    BooksModule,
-    OrdersModule,
-  ],
+  imports: [VideogamesModule, EventModule, BillsModule, BooksModule, TicketsModule],
   controllers: [AppController],
   providers: [AppService],
 })
